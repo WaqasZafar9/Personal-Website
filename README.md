@@ -1,7 +1,7 @@
 <br>
 <h1 align=center>
 <span> Responsive Portfolio Website </span>
-<img align="center" src="./Assets/favicons/favicon.png" alt="" width="50" height="50">
+<img align="center" src="Responsive-Portfolio-Website/Assets/favicons/favicon.ico" alt="" width="50" height="50">
 </h1>
 
 **This is my portfolio website built using HTML, CSS, and JavaScript. It includes multiple pages showcasing various sections such as career information, education details, hobbies, skills. The contact page is fully functional and uses emailjs to send emails to users upon form submission.**
