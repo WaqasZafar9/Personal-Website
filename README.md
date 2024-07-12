@@ -47,7 +47,7 @@ To use this portfolio template for your own portfolio:
 
 1. Clone this repository to your local machine.
 ```bash
-
+https://github.com/WaqasZafar9/Personal-Website.git
 ```
 2. Customize the content of each page to reflect your own career, education, skills, etc.
 3. If you want to use the contact form functionality:
