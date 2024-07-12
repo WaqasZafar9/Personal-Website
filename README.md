@@ -1,7 +1,7 @@
 <br>
 <h1 align=center>
 <span> Responsive Portfolio Website </span>
-<img align="center" src="./Assets/favicons/favicon.png" alt="" width="50" height="50">
+<img align="center" src="Responsive-Portfolio-Website/Assets/favicons/favicon.png" alt="" width="50" height="50">
 </h1>
 
 **This is my portfolio website built using HTML, CSS, and JavaScript. It includes multiple pages showcasing various sections such as career information, education details, hobbies, skills. The contact page is fully functional and uses emailjs to send emails to users upon form submission.**
@@ -47,7 +47,7 @@ To use this portfolio template for your own portfolio:
 
 1. Clone this repository to your local machine.
 ```bash
-
+https://github.com/WaqasZafar9/Personal-Website.git
 ```
 2. Customize the content of each page to reflect your own career, education, skills, etc.
 3. If you want to use the contact form functionality:
