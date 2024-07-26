@@ -9,6 +9,7 @@
     <link rel="icon" href="/Assets/favicons/favicon.png" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -70,14 +71,7 @@
                             <div class="csa-ok" onclick="closeSuccessMessage()">OK</div>
                         </div>
                     </div>
-                    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="form-section">
-                        <input type="hidden" name="access_key" value="dca62ce6-c7d6-4044-9e61-8be5b64cec4f">
-                        
-                        <!-- Hidden fields for user to receive my contact details -->
-                        <input type="hidden" name="my_email" value="waqaszafar771@gmail.com">
-                        <input type="hidden" name="my_phone" value="+92 340 0166731">
-                        <input type="hidden" name="my_address" value="Lahore, Pakistan">
-
+                    <form id="contact-form" class="form-section" onsubmit="sendEmail(event)">
                         <div class="form-group name-section">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -88,7 +82,7 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Please include your email address in the message text first."></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder="Please include your email address in the message box at the end."></textarea>
                         </div>
                         <div class="error" id="error-message" style="display: none;">
                             <i class="fa-solid fa-circle-xmark error-icon"></i>Please fill out all the fields
@@ -127,37 +121,65 @@
         </footer>
     </div>
 
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevents default form submission
+    <div class="nav-touch-close" id="nav-tc-js"></div>
 
-            var formData = new FormData(this);
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', this.action, true);
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    // Handle successful response
-                    document.getElementById('contact-submit-after').style.display = 'block';
-                    document.getElementById('contact-form').reset();
-                    setTimeout(() => {
-                        document.getElementById('contact-submit-after').style.display = 'none';
-                    }, 5000); // Hide success message after 5 seconds
-                } else {
-                    // Handle error response
-                    document.getElementById('error-message').style.display = 'block';
-                }
-            };
-            xhr.onerror = function() {
-                // Handle network errors
+    <script type="text/javascript" src="../script/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("TCr90ONdoGttU-pQd");
+        })();
+
+        function sendEmail(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('contact-form');
+            const name = form.name.value;
+            const email = form.email.value;
+            const message = form.message.value;
+
+            if (!name || !email || !message) {
                 document.getElementById('error-message').style.display = 'block';
-            };
-            xhr.send(formData);
-        });
+                return;
+            } else {
+                document.getElementById('error-message').style.display = 'none';
+            }
+
+            if (!validateEmail(email)) {
+                document.getElementById('email-error').style.display = 'block';
+                return;
+            } else {
+                document.getElementById('email-error').style.display = 'none';
+            }
+
+            emailjs.send('service_5eqlyjm', 'template_dw8jk3i', {
+                to_email: email,
+                from_name: name,
+                message: message,
+                from_email: email,
+            }).then(function(response) {
+                console.log('Sent successfully', response);
+                document.getElementById('contact-submit-after').style.display = 'block';
+                document.getElementById('contact-form').reset();
+                setTimeout(() => {
+                    document.getElementById('contact-submit-after').style.display = 'none';
+                }, 3000); // Hide success message after 3 seconds
+            }, function(error) {
+                console.error('Failed to send', error);
+                document.getElementById('error-message').style.display = 'block';
+            });
+        }
 
         function closeSuccessMessage() {
             document.getElementById('contact-submit-after').style.display = 'none';
         }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
     </script>
+    
 </body>
 
 </html>

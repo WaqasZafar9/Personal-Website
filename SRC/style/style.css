@@ -643,6 +643,7 @@ header.scrolled {
 
 .contact-main input[type="text"],
 .contact-main input[type="email"],
+
 .contact-main textarea {
 	width: 100%;
 	padding: 10px;
@@ -1863,3 +1864,72 @@ header.scrolled {
 		row-gap: 10px;
 	}
 }
+
+/* Style for Projects Section */
+.projects-section .header {
+	text-align: center;
+	margin-bottom: 30px;
+  }
+  
+  .projects-section .header .text {
+	font-size: 2em;
+	font-weight: bold;
+  }
+  
+  .projects-section .header .border-line {
+	width: 100px;
+	height: 3px;
+	background: #333;
+	margin: 10px auto;
+  }
+  
+  .projects {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+  }
+  
+  .project {
+	width: 45%;
+	margin: 20px 0;
+  }
+  
+  .project .image {
+	position: relative;
+	overflow: hidden;
+  }
+  
+  .project .image img {
+	width: 100%;
+	height: auto;
+	display: block;
+	transition: transform 0.3s ease;
+  }
+  
+  .project .texts {
+	text-align: center;
+	margin-top: 10px;
+  }
+  
+  .project .texts .header {
+	font-size: 1.5em;
+	font-weight: bold;
+  }
+  
+  .project .texts .text {
+	font-size: 1em;
+	color: #666;
+  }
+
+  .hidden {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .show {
+	opacity: 1;
+	transform: translateY(0);
+  }
+  
+  

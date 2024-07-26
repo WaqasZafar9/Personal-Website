@@ -1,117 +1,624 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home Page</title>
-    <link rel="stylesheet" type="text/css" href="SRC/style/style.css" />
-    <link
-      rel="icon"
-      href="Assets/favicons/favicon.png"
-      type="image/png"
-      sizes="32x32"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home Page</title>
+  <link rel="stylesheet" type="text/css" href="SRC/style/style.css" />
+  <link rel="icon" href="Assets/favicons/favicon.png" type="image/png" sizes="32x32" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
-    />
-  </head>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <body>
-    <!-- Hello -->
-    <header class="header" id="header">
-      <a href="index.html" class="logo"
-        ><span class="main-icon"></span><span>M Waqas Zafar</span></a
-      >
+    .hidden {
+      opacity: 0;
+      transform: translateY(20px);
+    }
 
-      <div class="navbar">
-        <a href="index.html" class="active">Home</a>
-        <a href="SRC/pages/skills.html">Skills</a>
-        <a href="SRC/pages/education.html">Education</a>
-        <a href="SRC/pages/projects.html">projects</a>
-        <a href="SRC/pages/career.html">Career</a>
-        <a href="SRC/pages/hobbies.html">Hobbies</a>
-      </div>
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.5s ease-in-out;
+    }
 
-      <div class="main">
-        <a href="SRC/pages/contact.html" class="user main-items"
-          ><i class="fas fa-envelope cm-icon"></i>Contact Me</a
-        >
-        <div class="main-items menu-icon-container" id="menu-icon-js">
-          <div class="bx bx-menu" id="menu-icon"></div>
-        </div>
-      </div>
-    </header>
+    .separator {
+      height: 2px;
+      background-color: #ccc;
+      margin: 20px 0;
+    }
 
-    <div class="page">
-      <section class="about" id="about">
-        <div class="about-content">
-          <div class="column right">
-            <img src="Assets/main.png" alt="" />
-          </div>
-          <div class="column left">
-            <div class="text">
-              I'm  <span id="typed" class="iAm"></span>
-            </div>
-            <p>
-              A 21-year-old Computer Science student at Riphah International
-              University, Lahore. Proficient in Python, Web, and Flutter, with
-              hands-on experience in Git/Github, MySQL, and Oracle, I have
-              developed various projects showcasing my technical skills and
-              innovative approach.
-            </p>
-            <div class="buttons">
-              <a href="/Assets/CV/waqas resume 3.pdf">Download CV</a>
-              <a href="SRC/pages/contact.html" class="cm-button">Contact Me</a>
-            </div>
-          </div>
-        </div>
-      </section>
+    section {
+  padding: 1px 0; 
+}
 
-      <footer class="footer">
-        <div class="left">&copy; 2024 • All Rights Reserved</div>
-        <div class="right">
-          <div class="social">
-            <a href="https://www.facebook.com/profile.php?id=100025333923074&mibextid=ZbWKwL" target="_blank"
-              ><i class="fa-brands fa-facebook"></i
-            ></a>
-          </div>
-          <div class="social">
-            <a href="https://www.instagram.com/m_waqaszafar/" target="_blank"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-          </div>
-          <div class="social">
-            <a
-              href="https://www.linkedin.com/in/m-waqas-zafar-645988293/"
-              target="_blank"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
-          </div>
-          <div class="social">
-            <a href="https://github.com/WaqasZafar9" target="_blank"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-          </div>
-        </div>
-      </footer>
+  </style>
+</head>
+
+<body>
+  <header class="header" id="header">
+    <a href="#header" class="logo"><span class="main-icon"></span><span>M Waqas Zafar</span></a>
+    <div class="navbar">
+      <a href="index.html" class="active">Home</a>
+      <a href="SRC/pages/skills.html">Skills</a>
+      <a href="SRC/pages/education.html">Education</a>
+      <a href="SRC/pages/projects.html">projects</a>
+      <a href="SRC/pages/career.html">Career</a>
+      <a href="SRC/pages/hobbies.html">Hobbies</a>
     </div>
+    <div class="main">
+      <a href="SRC/pages/contact2.html" class="user main-items"><i class="fas fa-envelope cm-icon"></i>Contact Me</a>
+      <div class="main-items menu-icon-container" id="menu-icon-js">
+        <div class="bx bx-menu" id="menu-icon"></div>
+      </div>
+    </div>
+  </header>
 
-    <div class="nav-touch-close" id="nav-tc-js"></div>
+  <div class="page">
+    <section class="about" id="about">
+      <div class="about-content">
+        <div class="column right">
+          <img src="Assets/main.png" alt="" />
+        </div>
+        <div class="column left">
+          <div class="text">
+            I'm <span id="typed" class="iAm"></span>
+          </div>
+          <p>
+            A 21-year-old Computer Science student at Riphah International University, Lahore. Proficient in Python,
+            Web, and Flutter, with hands-on experience in Git/Github, MySQL, and Oracle, I have developed various
+            projects showcasing my technical skills and innovative approach.
+          </p>
+          <div class="buttons">
+            <a href="/Assets/CV/waqas cv 3.pdf">Download CV</a>
+            <a href="#contact" class="cm-button">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script type="text/javascript" src="SRC/script/script.js"></script>
+    <!-- <div class="separator">.</div> -->
 
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script>
-        var typed = new Typed('#typed', {
-            strings: ['M Waqas Zafar'],
-            typeSpeed: 55,
+    <!-- Skills Section -->
+    <section class="skills" id="skills" data-aos="fade-up">
+      <main class="skills-main">
+        <div class="skills-section">
+          <div class="header">
+            <div class="text">My Skills</div>
+            <div class="border-line"></div>
+          </div>
+          <div class="skills">
+            <!-- Technical Skills -->
+            <!-- Soft Skills -->
+            <div class="skills-group-row">
+              <div class="skills-group-header">Soft Skills</div>
+              <div class="border-line"></div>
+              <div class="skills-group">
+                <div class="skill">
+                  <div class="icon"><i class="fa-solid fa-paper-plane icon-img"></i></div>
+                  <div class="skill-block">
+                    <div class="block-header">Communication</div>
+                    <div class="block-section">Clear Messaging, Active Listening</div>
+                    <div class="progress-block">85%</div>
+                    <div class="progress-bar">
+                      <div class="progress-per"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill">
+                  <div class="icon"><i class="fa-solid fa-people-group icon-img"></i></div>
+                  <div class="skill-block">
+                    <div class="block-header">Team Work</div>
+                    <div class="block-section">Collaboration, Conflict Resolution</div>
+                    <div class="progress-block">80%</div>
+                    <div class="progress-bar">
+                      <div class="progress-per"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill">
+                  <div class="icon"><i class="fa-solid fa-hourglass-start icon-img"></i></div>
+                  <div class="skill-block">
+                    <div class="block-header">Management</div>
+                    <div class="block-section">Task Delegation, Time Management</div>
+                    <div class="progress-block">70%</div>
+                    <div class="progress-bar">
+                      <div class="progress-per"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill">
+                  <div class="icon"><i class="fa-solid fa-palette icon-img"></i></div>
+                  <div class="skill-block">
+                    <div class="block-header">Creativity</div>
+                    <div class="block-section">Innovative Solutions, Brainstorming</div>
+                    <div class="progress-block">80%</div>
+                    <div class="progress-bar">
+                      <div class="progress-per"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Languages -->
+            <div class="skills-group-row">
+              <div class="skills-group-header">Languages</div>
+              <div class="border-line"></div>
+              <div class="skills-group">
+                <div class="skill">
+                  <div class="icon"><i class="fa-solid fa-code icon-img"></i></div>
+                  <div class="skill-block">
+                    <div class="block-header">Programming Languages</div>
+                    <div class="block-section">Flutter, Python, Java (Basic), Web front-end, Oracle/SQL, C++</div>
+                    <div class="progress-block">Various Proficiencies</div>
+                    <div class="progress-bar">
+                      <div class="progress-per"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill">
+                  <div class="icon"><i class="fa-solid fa-toolbox icon-img"></i></div>
+                  <div class="skill-block">
+                    <div class="block-header">Development Tools</div>
+                    <div class="block-section">Git & GitHub, MySQL/Oracle, VS Code, Notebooks, Google Colab, Android
+                      Studio, IntelliJ IDE</div>
+                    <div class="progress-block">Various Proficiencies</div>
+                    <div class="progress-bar">
+                      <div class="progress-per"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Concepts -->
+            <div class="skills-group-row">
+              <div class="skills-group-header">Concepts</div>
+              <div class="border-line"></div>
+              <div class="skills-group">
+                <div class="skill">
+                  <div class="icon"><i class="fa-solid fa-lightbulb icon-img"></i></div>
+                  <div class="skill-block">
+                    <div class="block-header">Technical Concepts</div>
+                    <div class="block-section">Data Structures & Algorithms, Documentation, Project Management, Databases,
+                      Networking, Programming</div>
+                    <div class="progress-block">Various Proficiencies</div>
+                    <div class="progress-bar">
+                      <div class="progress-per"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <div class="separator">.</div>
+
+    <!-- Education Section -->
+    <section class="education" id="education" data-aos="fade-up">
+      <main class="education-main">
+        <div class="education-section">
+          <div class="header">
+            <div class="text"><h1>Education</h1></div>
+            <div class="border-line"></div>
+          </div>
+          <div class="study first">
+            <div class="image">
+              <img src="/Assets/education/one.jpg" alt="Bachelor's Degree Image" />
+            </div>
+            <div class="line"></div>
+            <div class="texts">
+              <div class="header">Bachelor's Degree</div>
+              <div class="name">Riphah International University, Lahore</div>
+              <div class="year">2021 - 2025</div>
+              <div class="text">
+                I am pursuing Bachelors degree in Computer Science (CS).
+              </div>
+            </div>
+          </div>
+          <div class="study second">
+            <div class="image">
+              <img src="/Assets/education/two.jpg" alt="Higher Secondary Degree Image" />
+            </div>
+            <div class="line"></div>
+            <div class="texts">
+              <div class="header">Higher Secondary Degree</div>
+              <div class="name">Punjab Colleges</div>
+              <div class="year">2019 - 2021</div>
+              <div class="text">I studied FSc Pre Engineering in college.</div>
+            </div>
+          </div>
+          <div class="study third">
+            <div class="image">
+              <img src="/Assets/education/three.jpg" alt="Lower Secondary Degree Image" />
+            </div>
+            <div class="line"></div>
+            <div class="texts">
+              <div class="header">Lower Secondary Degree</div>
+              <div class="name">Govt. MC High School, Mian Channu</div>
+              <div class="year">2017 - 2019</div>
+              <div class="text">This is where i have completed my matric.</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <div class="separator">.</div>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects" data-aos="fade-up">
+      <h1>Projects</h1>
+      <main class="education-main">
+        <div class="education-section">
+          <div class="study first hidden">
+            <div class="image">
+              <a href="https://github.com/WaqasZafar9/Pet-Care-App" target="_blank">
+                <img src="/Assets/projects/pet 2.png" alt="Pettify App Image" />
+              </a>
+            </div>
+            <div class="line"></div>
+            <div class="texts">
+              <div class="header">Pettify APP</div>
+              <div class="text">A comprehensive Flutter app for pet care services.</div>
+              <div class="text">
+                GITHUB LINK <a href="https://github.com/WaqasZafar9/Pet-Care-App" target="_blank">here</a>
+              </div>
+            </div>
+          </div>
+          <div class="study second hidden">
+            <div class="image">
+              <a href="https://github.com/WaqasZafar9/Smart-E-License-System" target="_blank">
+                <img src="/Assets/projects/licence.jpg" alt="Smart-E-License System Image" />
+              </a>
+            </div>
+            <div class="line"></div>
+            <div class="texts">
+              <div class="header">Smart-E-License-System</div>
+              <div class="text">Revolutionizes the driving license process with modern technologies.</div>
+              <div class="text">
+                GITHUB LINK <a href="https://github.com/WaqasZafar9/Smart-E-License-System" target="_blank">here</a>
+              </div>
+            </div>
+          </div>
+          <div class="study third hidden">
+            <div class="image">
+              <a href="https://github.com/WaqasZafar9/Galaxy-Cricket-Website" target="_blank">
+                <img src="/Assets/projects/website.png" alt="Galaxy Cricket Website Image" />
+              </a>
+            </div>
+            <div class="line"></div>
+            <div class="texts">
+              <div class="header">Galaxy Cricket Website</div>
+              <div class="text">Provides the latest news, match updates, and interactive features.</div>
+              <div class="text">
+                GITHUB LINK <a href="https://github.com/WaqasZafar9/Galaxy-Cricket-Website" target="_blank">here</a>
+              </div>
+            </div>
+          </div>
+          <div class="study second hidden">
+            <div class="image">
+              <a href="#" target="_blank">
+                <img src="/Assets/projects/AI.jpg" alt="Smart-E-License System Image" />
+              </a>
+            </div>
+            <div class="line"></div>
+            <div class="texts">
+              <div class="header">AI Helmet Detection</div>
+              <div class="text">
+                Our AI Helmet Detection Project leverages machine learning to identify helmets in real-time using a
+                dataset of 100 images trained on Roboflow.
+              </div>
+              <div class="text">
+                GITHUB LINK <a href="https://github.com/WaqasZafar9" target="_blank">here</a>
+              </div>
+            </div>
+          </div>
+          <div class="study fourth hidden">
+            <div class="image">
+              <a href="https://github.com/WaqasZafar9/Cricket-Managment-DataBase" target="_blank">
+                <img src="/Assets/projects/Database.jpg" alt="Cricket Database System Image" />
+              </a>
+            </div>
+            <div class="line"></div>
+            <div class="texts">
+              <div class="header">Cricket Database System</div>
+              <div class="text">
+                This project is a Cricket Database system designed to store data related to a cricket tournament. It
+                utilizes the Oracle 21 C software to manage and organize the tournament's information, including team
+                details, match fixtures, player statistics, and more..
+              </div>
+              <div class="text">
+                GITHUB LINK <a href="https://github.com/WaqasZafar9/Cricket-Managment-DataBase" target="_blank">here</a>
+              </div>
+            </div>
+          </div>
+          <div class="header">MORE PROJECTS TO COME.</div>
+          <div class="text">
+            Check My Github to see the other practice projects <a href="https://github.com/WaqasZafar9"
+              target="_blank">here</a>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <div class="separator">.</div>
+
+    <!-- Career Section -->
+    <section class="career" id="career" data-aos="fade-up">
+     
+      <main class="career-main">
+        <div class="career-section">
+          <div class="header">
+            <div class="text"><h1>Career</h1></div>
+            <div class="border-line"></div>
+          <div class="professional-summary">
+            <div class="ps-header career-header">
+              <div class="text">Professional Summary</div>
+              <div class="header-line"></div>
+            </div>
+            <div class="texts">
+              I'm M Waqas Zafar, A 21-year-old Computer Science student at Riphah
+              International University, Lahore. With a strong foundation in
+              programming languages such as Python, Web, and Flutter, and
+              proficiency in tools like Git, MySQL, and Oracle, I have developed
+              a range of projects that showcase my technical abilities and
+              innovative approach. My experience in app development, database
+              management, and web development, coupled with active participation
+              in coding competitions and bootcamps, reflects my dedication to
+              advancing in the field of technology.
+            </div>
+          </div>
+
+          <div class="career-experience">
+            <div class="ce-header career-header">
+              <div class="text">Career Experience</div>
+              <div class="header-line"></div>
+            </div>
+            <div class="experience">
+              <div class="experience-row">
+                <div class="experience-header">
+                  <div class="text">Participation & Activities</div>
+                  <div class="header-line"></div>
+                </div>
+                <div class="texts">
+                  <div class="text-row">
+                    <div class="tr-icon"></div>
+                    Riphah Special Interest Groups (SIG) Core team member (2024)
+                  </div>
+                  <div class="text-row">
+                    <div class="tr-icon"></div>
+                    SOFTECH'24 Ambassador from Riphah
+                  </div>
+                  <div class="text-row">
+                    <div class="tr-icon"></div>
+                    PR & Marketing member at the CodemoTeams (2024)
+                  </div>
+                </div>
+              </div>
+              <div class="experience">
+                <div class="experience-row">
+                  <div class="experience-header">
+                    <div class="text">Experience</div>
+                    <div class="header-line"></div>
+                  </div>
+                  <div class="texts">
+                    <div class="text-row">
+                      <div class="tr-icon"></div>
+                      Software Engineering Fellow At @HeadStarter AI
+                    </div>
+                    <div class="text-row">
+                      <div class="tr-icon"></div>
+                      Completed Python one week Internship Bootcamp
+                    </div>
+                    <div class="text-row">
+                      <div class="tr-icon"></div>
+                      Team was Runner up at Riphah logic and programming competition.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="career-goals">
+              <div class="cg-header career-header">
+                <div class="text">Career Goals</div>
+                <div class="header-line"></div>
+              </div>
+              <div class="goals">
+                <div class="goals-row short-term-goals">
+                  <div class="goals-header">
+                    <div class="text">Short-Term Goals</div>
+                    <div class="header-line"></div>
+                  </div>
+                  <div class="texts">
+                    <div class="text-row">
+                      <div class="tr-icon"></div>
+                      Develop technical skills in various languages and tools.
+                    </div>
+                    <div class="text-row">
+                      <div class="tr-icon"></div>
+                      Gain practical experience through collaboration.
+                    </div>
+                    <div class="text-row">
+                      <div class="tr-icon"></div>
+                      Grow my network.
+                    </div>
+                  </div>
+                </div>
+                <div class="goals-row long-term-goals">
+                  <div class="goals-header">
+                    <div class="text">Long-Term Goals</div>
+                    <div class="header-line"></div>
+                  </div>
+                  <div class="texts">
+                    <div class="text-row">
+                      <div class="tr-icon"></div>
+                      Establish a Software agency.
+                    </div>
+                    <div class="text-row">
+                      <div class="tr-icon"></div>
+                      Lead a team of creative professionals.
+                  </div>
+                  <div class="text-row">
+                    <div class="tr-icon"></div>
+                    Contribute to business growth through online solutions.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact" data-aos="fade-up">
+    <main class="contact-main">
+      <div class="contact-full">
+          <div class="contact-section">
+              <div class="cs-top mobile-show">
+                  <h1>Reach Me</h1>
+                  <div class="border-line"></div>
+              </div>
+              <div class="cs-item email">
+                  <div class="icon"><i class="fas fa-envelope"></i></div>
+                  <div class="text">
+                      <div class="placeHolder">E-mail</div>
+                      <div class="info">waqaszafar771@gmail.com</div>
+                  </div>
+              </div>
+              <div class="cs-item number">
+                  <div class="icon"><i class="fas fa-phone"></i></div>
+                  <div class="text">
+                      <div class="placeHolder">Phone</div>
+                      <div class="info">+92 340 0166731</div>
+                  </div>
+              </div>
+              <div class="cs-item address">
+                  <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <div class="text">
+                      <div class="placeHolder">Address</div>
+                      <div class="info">Lahore, Pakistan</div>
+                  </div>
+              </div>
+          </div>
+          <section class="contact-form">
+              <h1>Contact Me</h1>
+              <div class="border-line"></div>
+              <div class="contact-submit-after" id="contact-submit-after" style="display: none;">
+                  <div class="box">
+                      <i class="fa-solid fa-circle-check csa-icon"></i>
+                      <div class="csa-text">Message sent successfully</div>
+                      <div class="csa-ok" onclick="closeSuccessMessage()">OK</div>
+                  </div>
+              </div>
+              <form id="contact-form" class="form-section" onsubmit="sendEmail(event)">
+                  <div class="form-group name-section">
+                      <label for="name">Name</label>
+                      <input type="text" id="name" name="name" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="message">Message</label>
+                      <textarea id="message" name="message" rows="5" required placeholder="Please include your email address in the message box at the end."></textarea>
+                  </div>
+                  <div class="error" id="error-message" style="display: none;">
+                      <i class="fa-solid fa-circle-xmark error-icon"></i>Please fill out all the fields
+                  </div>
+                  <div class="email-error" id="email-error" style="display: none;">
+                      <i class="fa-solid fa-circle-xmark error-icon"></i>Email address is not valid
+                  </div>
+                  <button type="submit" id="contact-submit" class="contact-button">
+                      <div class="contact-load">
+                          <div class="line"></div>
+                          <div class="line"></div>
+                          <div class="line"></div>
+                      </div>
+                      <div class="submit-text">Submit</div>
+                  </button>
+              </form>
+          </section>
+      </div>
+  </main>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="left">&copy; 2024 • All Rights Reserved</div>
+    <div class="right">
+      <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=100025333923074&mibextid=ZbWKwL" target="_blank"><i
+            class="fa-brands fa-facebook"></i></a>
+      </div>
+      <div class="social">
+        <a href="https://www.instagram.com/m_waqaszafar/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/m-waqas-zafar-645988293/" target="_blank"><i
+            class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <div class="social">
+        <a href="https://github.com/WaqasZafar9" target="_blank"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+  </div>
+
+  <div class="nav-touch-close" id="nav-tc-js"></div>
+
+  <script type="text/javascript" src="SRC/script/script.js"></script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    var typed = new Typed('#typed', {
+      strings: ['M Waqas Zafar'],
+      typeSpeed: 55,
+    });
+
+    AOS.init();
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const images = document.querySelectorAll(".study .image img");
+
+      images.forEach((img) => {
+        img.addEventListener("mouseover", () => {
+          img.style.transform = "scale(1.1)";
+          img.style.transition = "transform 0.3s";
         });
-    </script> 
-  </body>
+
+        img.addEventListener("mouseout", () => {
+          img.style.transform = "scale(1)";
+        });
+      });
+
+      // Scroll Animation
+      const hiddenElements = document.querySelectorAll(".hidden");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      hiddenElements.forEach((el) => observer.observe(el));
+    });
+  </script>
+</body>
+
 </html>
